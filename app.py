@@ -8,8 +8,8 @@ from PIL import Image
 import openpyxl 
 
 
-st.title('¿CUÁL ES EL MEJOR VEHÍCULO QUE SE ADAPTA MEJOR A MIS NECESIDADES?')
-
+st.title('¿CUÁL ES EL VEHÍCULO QUE SE ADAPTA MEJOR A MIS NECESIDADES?')
+st.title('TE AYUDAMOS EN TU BÚSQUEDA DE TU COCHE DE OCASIÓN PERFECTO')
 img= Image.open('feriaVO.jpg')
 st.image(img,width=690)
 
@@ -43,47 +43,57 @@ if km1==('You selected: ', 'Menos de 15.000km') and uso1==('You selected: ', 'So
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo1)
     st.dataframe(df)
-    df.to_excel('example.xlsx', sheet_name='example')
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Menos de 15.000km') and uso1 == ('You selected: ', 'Por ciudad y carretera por igual.') and familia1 == ('You selected: ', 'Suelo viajar sólo y/o una persona más.'):
     df=FlexicarScraping(Tipo2)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo2)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Más de 15.000 km') and uso1 == ('You selected: ', 'Sobretodo por ciudad y muy pocos viajes por carretera al año.') and familia1 == ('You selected: ', 'Suelo viajar sólo y/o una persona más.'):
     df=FlexicarScraping(Tipo3)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo3)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Más de 15.000 km') and uso1 == ('You selected: ', 'Uso el vehículo sobretodo para viajar y muy poco por ciudad.') and familia1 == ('You selected: ', 'Suelo viajar con la familia (3 personas máx).'):
     df=FlexicarScraping(Tipo4)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo4)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Menos de 15.000km') and uso1 == ('You selected: ', 'Sobretodo por ciudad y muy pocos viajes por carretera al año.') and familia1 == ('You selected: ', 'Suelo viajar con la familia (3 personas máx).'):
     df=FlexicarScraping(Tipo5)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo5)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Menos de 15.000km')and uso1 == ('You selected: ', 'Sobretodo por ciudad y muy pocos viajes por carretera al año.') and familia1 ==('You selected: ', 'Suelo viajar con la familia (más de 3 personas).'):
     df=FlexicarScraping(Tipo6)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo6)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Más de 15.000 km') and uso1 == ('You selected: ', 'Uso el vehículo sobretodo para viajar y muy poco por ciudad.') and familia1 ==('You selected: ', 'Suelo viajar con la familia (más de 3 personas).'):
     df=FlexicarScraping(Tipo7)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo7)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Más de 15.000 km') and uso1 == ('You selected: ', 'Sobretodo por ciudad y muy pocos viajes por carretera al año.') and familia1 ==('You selected: ', 'Suelo viajar sólo y/o una persona más.'):
     df=FlexicarScraping(Tipo3)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo3)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Menos de 15.000 km') and uso1 == ('You selected: ', 'Uso el vehículo sobretodo para viajar y muy poco por ciudad.') and familia1 ==('You selected: ', 'Suelo viajar con la familia (más de 3 personas).'):
     df=FlexicarScraping(Tipo6)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo6)
     st.dataframe(df)
+    df.to_excel('CochesVO.xlsx', sheet_name='example')
 
 st.sidebar.header("¿Cómo funciona este calificador de usuarios?")
-st.sidebar.text("Este programa te recomienda los vehículos que están en el momento de la consulta. Te mostrará los vehículos que más se adapten a sus necesidades.")
+st.sidebar.text("Este programa califica al usuario sobre qué coche se ajusta más a sus necesidades.") 
+st.sidebar.text("Te mostrará los 8 vehículos que se ajustan mejor a tu perfil en el momento de la consulta.")
+st.sidebar.text("Se generará un excel con la consulta para que puedas tener una referencia de la cotización exacta de tu elección.")
