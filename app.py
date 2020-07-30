@@ -5,6 +5,8 @@ from Flexicar_scraping import FlexicarScraping
 from Concat_funtion import concat
 from config import *
 from PIL import Image
+import openpyxl 
+
 
 st.title('¿CUÁL ES EL MEJOR VEHÍCULO QUE SE ADAPTA MEJOR A MIS NECESIDADES?')
 
@@ -41,6 +43,7 @@ if km1==('You selected: ', 'Menos de 15.000km') and uso1==('You selected: ', 'So
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
     st.write("Click aquí:",Tipo1)
     st.dataframe(df)
+    df.to_excel('example.xlsx', sheet_name='example')
 elif km1 == ('You selected: ', 'Menos de 15.000km') and uso1 == ('You selected: ', 'Por ciudad y carretera por igual.') and familia1 == ('You selected: ', 'Suelo viajar sólo y/o una persona más.'):
     df=FlexicarScraping(Tipo2)
     st.write("Puedes encontrar los detalles de tu resultado haciendo click en la URL:")
